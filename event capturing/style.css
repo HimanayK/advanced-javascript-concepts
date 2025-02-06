@@ -1,0 +1,13 @@
+/*
+ Event Capturing in JavaScript 
+Event capturing starts from the topmost DOM element and propagates downward to the target element. 
+
+ 
+ Key Points: 
+
+Events move from root to target during capturing. 
+
+Use true as the third argument in addEventListener to capture events. 
+
+You can stop the event's propagation using event.stopPropagation(). 
+*/
