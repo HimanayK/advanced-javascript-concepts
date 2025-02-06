@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling and Capturing</title>
+    <style>
+      #div1 {
+        background-color: aqua;
+        font-weight: 500;
+        padding: 30px;
+        line-height: 50px;
+        
+      }
+
+      #div2 {
+        background-color: blueviolet;
+        padding: 30px;
+      }
+
+      #div3 {
+        background-color: blue;
+        color: white;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      I am grandparent div
+      <div id="div2">
+        I am parent div
+        <div id="div3">
+          I am child div</div>
+      </div>
+    </div>
+
+    <script>
+        
+        //********Bubbling phase - from target element to its parent and ancestor elements, default behavior - value false
+
+      // let grandParent = document.getElementById("div1");
+      // grandParent.addEventListener("click", () => {
+      //   alert("The grandparent div is clicked");
+      // });
+
+      // let parent = document.getElementById("div2");
+      // parent.addEventListener("click", () => {
+      //   alert("The parent div is clicked");
+      // });
+
+      // let child = document.getElementById("div3");
+      // child.addEventListener("click", (event) => {
+      //   alert("The child div is clicked");
+      //   console.log(event.type);       //click
+        
+       
+      // });
+
+       //*******Capturing phase - from root element to its descendants until it reaches to target element, enable it by setting it to true
+
+      let grandParent = document.getElementById("div1");
+      grandParent.addEventListener("click", (event) => {
+        alert("The grandparent div is clicked");
+       event.stopPropagation();
+        
+      }, true);
+
+      let parent = document.getElementById("div2");
+      parent.addEventListener("click", () => {
+        alert("The parent div is clicked");
+      }, true);
+
+      let child = document.getElementById("div3");
+      child.addEventListener("click", () => {
+        alert("The child div is clicked");
+        console.log(event.type);       //click
+        
+       
+      }, true);
+      
+
+    </script>
+  </body>
+</html>
