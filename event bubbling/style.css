@@ -1,0 +1,10 @@
+/*
+Event Bubbling in JavaScript. Event bubbling is a mechanism where an event starts from the target element (the element that triggered the event) and propagates upward through its parent elements in the DOM hierarchy. 
+
+ 
+Key Points: 
+
+How it Works: When an event occurs (like a click), it first triggers on the target element and then moves up to its parent, grandparent, and so on, until it reaches the document. 
+
+Stopping Propagation: The upward movement of the event can be stopped using event.stopPropagation(). 
+*/
