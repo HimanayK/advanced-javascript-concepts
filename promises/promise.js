@@ -1,5 +1,5 @@
 let newPromise = new Promise((resolve, reject) => {
-  isRight = true;
+  let isRight = true;
   if (isRight == true) {
     resolve("Yes, she is right");
   } else {
