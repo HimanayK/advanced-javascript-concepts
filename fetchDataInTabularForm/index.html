@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data in Tabular Form</title>
+    <style>
+        #div {
+           display: flex;
+           flex-direction: column;
+           justify-items: center;
+           align-items: center;
+        }
+        button {
+            font-size: 1rem;
+            padding: 0.3rem;
+            margin-bottom: 1rem;
+        }
+        /* #table {
+            margin: auto;
+        } */
+        #table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 0.2rem 0.8rem;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="div">
+        <h1>Product Details</h1>
+        <button onclick="fetchData()">Click</button>
+        <div>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js" />
+</body>
+</html>
