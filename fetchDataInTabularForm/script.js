@@ -14,31 +14,32 @@ async function fetchData() {
 
         for (let i = 0; i < data.length; i++) {
             let item = data[i];
-            //create & append <tr>
+            //create & append <tr> inside <tbody>
             let tableRow = document.createElement("tr");
             tableBody.appendChild(tableRow);
 
-             //create & append <td> for id
+             //create <td> for id
             let idCell = document.createElement("td");
             idCell.textContent = item.id;
 
-            //create & append <td> for title
+            //create <td> for title
             let titleCell = document.createElement("td");
             titleCell.textContent = item.title;
 
-            //create & append <td> for price
+            //create <td> for price
             let price = document.createElement("td");
             price.textContent = item.price;
 
-            //create & append <td> for category
+            //create <td> for category
             let category = document.createElement("td");
             category.textContent = item.category;
             console.log(category);
 
-            //create & append <td> for image, create <img> inside <td>
+            //create <td> for image, create <img> inside <td>
             let image = document.createElement("td");
               image.innerHTML = `<img src=${item.image} style="width: 30px; height: 30px">`;
 
+              //append all <td> inside <tr>
             tableRow.append(idCell, titleCell, price, category, image);
 
         }
