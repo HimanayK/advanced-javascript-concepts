@@ -36,11 +36,17 @@ async function fetchData() {
             console.log(category);
 
             //create <td> for image, create <img> inside <td>
-            let image = document.createElement("td");
-              image.innerHTML = `<img src=${item.image} style="width: 30px; height: 30px">`;
+            let imageCell = document.createElement("td");
+            let image = document.createElement("img");
+            image.src = item.image;
+            image.alt = "Product Image";
+            image.style.width = "50px";
+            image.style.heigth = "50px";
+            imageCell.appendChild(image)
+            //imageCell.innerHTML = `<img src=${item.image} style="width: 30px; height: 30px">`;
 
               //append all <td> inside <tr>
-            tableRow.append(idCell, titleCell, price, category, image);
+            tableRow.append(idCell, titleCell, price, category, imageCell);
 
         }
     } catch {
