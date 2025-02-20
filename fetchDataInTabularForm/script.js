@@ -14,6 +14,7 @@ async function fetchData() {
 
         for (let i = 0; i < data.length; i++) {
             let item = data[i];
+            
             //create & append <tr> inside <tbody>
             let tableRow = document.createElement("tr");
             tableBody.appendChild(tableRow);
@@ -28,7 +29,7 @@ async function fetchData() {
 
             //create <td> for price
             let price = document.createElement("td");
-            price.textContent = item.price;
+            price.textContent = `$${item.price.toFixed(2)}`;
 
             //create <td> for category
             let category = document.createElement("td");
