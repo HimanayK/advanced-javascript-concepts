@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body>
+
+    <ul id="unordered-list">
+        <li id="item1">Item 1</li>
+        <li id="item2">Item 2</li>
+        <li id="item3">Item 3</li>
+    </ul>
+    <button id="btn">Create Items</button>
+    
+
+    <script>
+        let count = 3;
+        let unorderedList = document.getElementById("unordered-list");
+        
+        unorderedList.addEventListener("click", (event) => {
+            alert(`${event.target.textContent} has been clicked`);
+        });
+
+        let button = document.getElementById("btn");
+        button.addEventListener("click", () => {
+            let newItem = document.createElement("li");
+            count++;   // means count = count + 1
+            newItem.textContent = `Item ${count}`;
+            unorderedList.append(newItem);
+        })
+
+
+
+    </script>
+</body>
+</html>
