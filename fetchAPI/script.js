@@ -37,6 +37,8 @@ fetch("https://fakestoreapi.com/products")
     console.log("Error in the URL 🛑");
   });
 
+
+  
 //3. async await  EXAMPLE ----------------------------
 async function fetchData() {
   let url = "https://fakestoreapi.com/products/1";
@@ -62,3 +64,12 @@ DATA-->  {
   image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
   rating: { rate: 3.9, count: 120 }
 } */
+
+
+
+  // async/await usinf IIFE
+  (async () => {
+    const serverResult = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const jsonResult = await serverResult.json();
+    console.log(jsonResult);
+})();
